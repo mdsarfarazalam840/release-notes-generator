@@ -1,0 +1,8 @@
+repo: "mdsarfarazalam840/release-notes-generator"
+batch_size: 200
+llm:
+  model: "minimax/minimax-m2:free"
+  temperature: 0.0
+publish:
+  confluence_space: 'MFS'
+  confluence_parent_page_id: 123456

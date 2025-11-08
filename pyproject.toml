@@ -1,0 +1,8 @@
+[project]
+name = "release-notes-generator"
+version = "0.1.0"
+description = "Generate release notes from git and issue trackers using LLMs"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"

@@ -1,0 +1,3 @@
+abc123|Alice|feat: add new analytics dashboard||2025-10-15
+bcd234|Bob|fix: memory leak in cache (#245)||2025-10-14
+cde345|Carol|docs: update README||2025-10-12

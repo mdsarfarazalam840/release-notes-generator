@@ -1,0 +1,32 @@
+services:
+  # Backend API Service - serves latest notes and generation endpoints
+  backend:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: release-notes-backend
+    env_file:
+      - ../.env
+    volumes:
+      - ..:/app
+    expose:
+      - "5000"
+    networks:
+      - release-notes-network
+
+  # Frontend Service - React + Vite Preview App (served via nginx)
+  frontend:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.frontend
+    container_name: release-notes-frontend
+    ports:
+      - "${FRONTEND_PORT:-3000}:80"
+    depends_on:
+      - backend
+    networks:
+      - release-notes-network
+
+networks:
+  release-notes-network:
+    driver: bridge
